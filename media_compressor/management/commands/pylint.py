@@ -12,7 +12,7 @@ import sys
 from django.core.management.base import CommandError
 from django.conf import settings
 
-from django_extras.management.commands import AppsCommand
+from media_compressor.management.commands import AppsCommand
 
 class Command(AppsCommand):
     """Run pylint over the Python files for the applications."""

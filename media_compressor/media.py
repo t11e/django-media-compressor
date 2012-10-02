@@ -23,7 +23,7 @@ def _find_app_roots():
     for app in apps:
         provider = pkg_resources.get_provider(app)
         try:
-            app_root = provider.get_resource_filename(resource_manager, 'media')
+            app_root = provider.get_resource_filename(resource_manager, 'static')
         except KeyError:
             app_root = None
         if app_root is not None and os.path.isdir(app_root):
@@ -105,6 +105,7 @@ def resolve_media_paths(paths):
     installed applications media directory. Raises an error if any of the
     paths can't be found."""
     converted_paths = {}
+    print get_app_roots()
     for media_root in get_app_roots():
         for path in paths:
             if path not in converted_paths:

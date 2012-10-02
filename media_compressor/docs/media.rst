@@ -3,5 +3,5 @@
 Django Extras Media
 ====================
 
-.. automodule:: django_extras.media
+.. automodule:: media_compressor.media
     :members:

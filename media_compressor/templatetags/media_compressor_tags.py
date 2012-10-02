@@ -1,5 +1,5 @@
 """
-Template tags package for django_extras, adds tags for converting to JSON and
+Template tags package for media_compressor, adds tags for converting to JSON and
 compressing JS/CSS.
 """
 import locale
@@ -9,7 +9,7 @@ from django.utils import simplejson
 from django.utils.safestring import mark_safe
 from django.utils.http import urlquote
 from django import template
-from django_extras.media import compress_media, expand_source_filenames
+from media_compressor.media import compress_media, expand_source_filenames
 
 locale.setlocale(locale.LC_ALL, '')
 register = template.Library() #pylint: disable-msg=C0103
@@ -96,7 +96,7 @@ class CompressedMediaNode(template.Node):
                 # If a condition is set, then the ie-specific template is
                 # required.
                 template_suffix += '_ie'
-            template_name = 'django_extras/compressed_%s.html' % \
+            template_name = 'media_compressor/compressed_%s.html' % \
                 (template_suffix,)
 
             source_filenames = config['source_filenames']

@@ -11,7 +11,7 @@ import subprocess
 
 from django.conf import settings
 
-from django_extras.management.commands import MediaAppsCommand
+from media_compressor.management.commands import MediaAppsCommand
 
 class Command(MediaAppsCommand):
     """Generate the JavaScript documentation for the applications using

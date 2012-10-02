@@ -7,14 +7,14 @@ Generate documentation for all installed applications::
 
 Generate documentation for a specific app or apps::
 
-    ./manage.py pydoc django_extras dynamic_model
+    ./manage.py pydoc media_compressor dynamic_model
 
 """
 import subprocess
 import os
 import sys
 
-from django_extras.management.commands import AppsCommand
+from media_compressor.management.commands import AppsCommand
 
 class Command(AppsCommand):
     """Run sphinx over the Django applications to generate documentation from

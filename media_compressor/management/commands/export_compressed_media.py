@@ -13,7 +13,7 @@ from django.core.management import call_command
 from django.core.management.base import BaseCommand
 from django.core.management.base import CommandError
 
-import django_extras.media
+import media_compressor.media
 
 class Command(BaseCommand):
     option_list = BaseCommand.option_list + (

@@ -1,12 +1,12 @@
 """
-Unit tests for django_extras.
+Unit tests for media_compressor.
 """
 
 from django.conf import settings
 from django.template import Context, Template
 from django.test import TestCase
 
-from django_extras.templatetags import django_extras_tags
+from media_compressor.templatetags import media_compressor_tags
 
 class AsJsonTemplateFilterTest(TestCase): #pylint: disable-msg=R0904
     """Tests for the as_json filter"""
@@ -36,7 +36,7 @@ class AsJsonTemplateFilterTest(TestCase): #pylint: disable-msg=R0904
 
 
 def _nop_compress_media(_output_filename, _source_filenames, compress):
-    """Do nothing version of django_extras.media.compress_media to make
+    """Do nothing version of media_compressor.media.compress_media to make
     testing easier."""
     pass
 
@@ -50,8 +50,8 @@ class CompressedMediaTemplateTagTest(TestCase): #pylint: disable-msg=R0904
         self.old_compress = settings.COMPRESS
         self.old_compress_js = settings.COMPRESS_JS
         self.old_compress_css = settings.COMPRESS_CSS
-        self.old_compress_media = django_extras_tags.compress_media
-        django_extras_tags.compress_media = _nop_compress_media
+        self.old_compress_media = media_compressor_tags.compress_media
+        media_compressor_tags.compress_media = _nop_compress_media
 
         settings.COMPRESS_JS = {
             'empty_js': {
@@ -83,7 +83,7 @@ class CompressedMediaTemplateTagTest(TestCase): #pylint: disable-msg=R0904
         settings.COMPRESS = self.old_compress
         settings.COMPRESS_JS = self.old_compress_js
         settings.COMPRESS_CSS = self.old_compress_css
-        django_extras_tags.compress_media = self.old_compress_media
+        media_compressor_tags.compress_media = self.old_compress_media
 
     def test_compress_debug_empty_js(self):
         """Test that compressed_js works when COMPRESS_DEBUG is True with

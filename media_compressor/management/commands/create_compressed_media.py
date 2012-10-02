@@ -9,7 +9,7 @@ Usage::
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from django_extras.media import compress_media, expand_source_filenames
+from media_compressor.media import compress_media, expand_source_filenames
 
 class Command(BaseCommand):
     """Build the compressed media."""

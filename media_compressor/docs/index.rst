@@ -1,7 +1,7 @@
 Welcome to Django Extras 's documentation!
 ==========================================
 
-.. automodule:: django_extras
+.. automodule:: media_compressor
 
 Contents:
 

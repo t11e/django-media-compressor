@@ -16,7 +16,7 @@ import subprocess
 from django.conf import settings
 from django.core.management.base import CommandError
 
-from django_extras.management.commands import AppsCommand
+from media_compressor.management.commands import AppsCommand
 
 _SUMMARY_PATTERN = re.compile(r"""^Total (?P<total>\d+) tests """
     """\(Passed: (?P<passed>\d+); Fails: (?P<failed>\d+); Errors: """

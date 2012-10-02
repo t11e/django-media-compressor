@@ -1,5 +1,5 @@
 """
-Commands module for django_extras.
+Commands module for media_compressor.
 """
 import os.path
 from optparse import make_option

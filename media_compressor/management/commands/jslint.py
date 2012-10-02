@@ -12,7 +12,7 @@ import subprocess
 from django.conf import settings
 from django.core.management.base import CommandError
 
-from django_extras.management.commands import MediaAppsCommand
+from media_compressor.management.commands import MediaAppsCommand
 
 class Command(MediaAppsCommand):
     """Run jslint over all the JavaScript files for the applications."""
